@@ -15,9 +15,7 @@ import javax.persistence.Id
 class UserResource(val usersRepository: UsersRepository) {
 
     @GetMapping(value = "/all")
-    fun getUsers() : List<Users>{
-        return usersRepository.findAll()
-    }
+    fun getUsers() = usersRepository.findAll()
 
     @GetMapping(value = "/insert/{name}")
     fun insertUsers(@PathVariable name: String): List<Users>{
